@@ -1,1 +1,25 @@
-grid_load_hover_effect.erb
+<section class="grid-wrap">
+  <ul class="grid swipe-rotate" id="grid">
+    <li class="title-box">
+      <h2>Gallery by <a href="http://jeffkynaston.com"> Jeff Kynaston </a></h2>
+    </li>
+    <% @photos.each do |photo| %>
+      <li><a href="#"><img src="/img/<%= photo.path %>" alt="<%= photo.name %>"><h3><%= photo.name %></h3></a></li>
+
+    <% end %>
+
+
+  </ul>
+</section>
+
+
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/colorfinder-1.1.js"></script>
+    <script src="js/gridScrollFx.js"></script>
+    <script>
+      new GridScrollFx( document.getElementById( 'grid' ), {
+        viewportFactor : 0.4
+      } );
+    </script>
